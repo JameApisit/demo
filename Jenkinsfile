@@ -6,7 +6,6 @@ pipeline {
 
         stage('Init'){
             steps {
-                bat 'ls'
                 echo 'Init'
                 echo '******************************'
             }
