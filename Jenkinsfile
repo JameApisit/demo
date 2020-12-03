@@ -13,8 +13,6 @@ pipeline {
 
         stage('Yarn Install') {
             steps {
-                sh 'touch file4.txt,file5.txt,file6.txt'
-                sh 'ls'
                 echo 'Yarn Install'
                 echo '******************************'
             }
