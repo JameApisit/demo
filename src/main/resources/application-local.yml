@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://206.189.87.187:3306/thaiinterfly_db?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&characterSetResults=UTF-8
+    username: developer
+    password: "#Po2R:aEtwJBRV0(GxD8Ktn4-vRowu,s"
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+      use-new-id-generator-mappings: false
+    database-platform: org.hibernate.dialect.MySQLDialect
+    properties.hibernate.jdbc.batch_size: 1000
+    show-sql: true
