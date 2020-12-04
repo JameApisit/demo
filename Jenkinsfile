@@ -6,14 +6,14 @@ pipeline {
 
         stage('Init'){
             steps {
-                echo 'OMGGODInit1'
+                echo 'Init1'
                 echo '******************************'
             }
         }
 
         stage('Yarn Install') {
             steps {
-                echo 'Yarn Install1'
+                echo 'Yarn Install1SSSSS'
                 echo '******************************'
             }
         }
