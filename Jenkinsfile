@@ -6,7 +6,7 @@ pipeline {
 
         stage('Init'){
             steps {
-                echo 'Init1234567'
+                echo 'Init1234'
                 echo '******************************'
             }
         }
