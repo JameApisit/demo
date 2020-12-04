@@ -6,7 +6,7 @@ pipeline {
 
         stage('Init'){
             steps {
-                echo 'Init1'
+                echo 'OMGGODInit1'
                 echo '******************************'
             }
         }
