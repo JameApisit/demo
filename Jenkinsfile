@@ -6,21 +6,21 @@ pipeline {
 
         stage('Init'){
             steps {
-                echo 'Init'
+                echo 'Init1'
                 echo '******************************'
             }
         }
 
         stage('Yarn Install') {
             steps {
-                echo 'Yarn Install'
+                echo 'Yarn Install1'
                 echo '******************************'
             }
         }
 
         stage('Yarn Build') {
             steps {
-                echo 'Yarn Build'
+                echo 'Yarn Build1'
                 echo '******************************'
             }
         }
@@ -28,7 +28,7 @@ pipeline {
 
         stage('Deploy') {
             steps{
-                echo 'Deploy'
+                echo 'Deploy1'
                 echo '******************************'
             }
         }
