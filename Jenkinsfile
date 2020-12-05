@@ -6,8 +6,8 @@ pipeline {
 
             steps {
                 withMaven(maven : 'maven_3.6.3') {
-                    sh 'mvn formatter:format'
-                    sh 'mvn clean install -DskipTests'
+                    bat  'mvn formatter:format'
+                    bat  'mvn clean install -DskipTests'
                 }
             }
         }
@@ -16,7 +16,7 @@ pipeline {
 
             steps {
                 withMaven(maven : 'maven_3.6.3') {
-                    sh 'mvn test'
+                    bat  'mvn test'
                 }
             }
         }
@@ -25,7 +25,7 @@ pipeline {
         stage ('Deployment Stage') {
             steps {
                 withMaven(maven : 'maven_3.6.3') {
-                    sh 'java -jar -Dspring.profiles.active=local target/demo-0.0.1-SNAPSHOT.jar'
+                    bat  'java -jar -Dspring.profiles.active=local target/demo-0.0.1-SNAPSHOT.jar'
                 }
             }
         }
