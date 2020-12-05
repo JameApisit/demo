@@ -5,7 +5,7 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                withMaven(maven : 'maven_3_5_0') {
+                withMaven(maven : 'maven_3_6_3') {
                     sh 'mvn formatter:format'
                     sh 'mvn clean install -DskipTests'
                 }
@@ -15,7 +15,7 @@ pipeline {
         stage ('Testing Stage') {
 
             steps {
-                withMaven(maven : 'maven_3_5_0') {
+                withMaven(maven : 'maven_3_6_3') {
                     sh 'mvn test'
                 }
             }
@@ -24,7 +24,7 @@ pipeline {
 
         stage ('Deployment Stage') {
             steps {
-                withMaven(maven : 'maven_3_5_0') {
+                withMaven(maven : 'maven_3_6_3') {
                     sh 'java -jar -Dspring.profiles.active=local target/demo-0.0.1-SNAPSHOT.jar'
                 }
             }
