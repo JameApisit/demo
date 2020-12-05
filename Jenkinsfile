@@ -1,35 +1,32 @@
 pipeline {
-    
-    agent any  
+    agent any
 
     stages {
+        stage ('Compile Stage') {
 
-        stage('Init'){
             steps {
-                echo 'Init1'
-                echo '******************************'
+                withMaven(maven : 'maven_3_5_0') {
+                    sh 'mvn formatter:format'
+                    sh 'mvn clean install -DskipTests'
+                }
             }
         }
 
-        stage('Yarn Install') {
-            steps {
-                echo 'Yarn Install1SSSSS'
-                echo '******************************'
-            }
-        }
+        stage ('Testing Stage') {
 
-        stage('Yarn Build') {
             steps {
-                echo 'Yarn Build1'
-                echo '******************************'
+                withMaven(maven : 'maven_3_5_0') {
+                    sh 'mvn test'
+                }
             }
         }
 
 
-        stage('Deploy') {
-            steps{
-                echo 'Deploy1'
-                echo '******************************'
+        stage ('Deployment Stage') {
+            steps {
+                withMaven(maven : 'maven_3_5_0') {
+                    sh 'java -jar -Dspring.profiles.active=local target/demo-0.0.1-SNAPSHOT.jar'
+                }
             }
         }
     }
