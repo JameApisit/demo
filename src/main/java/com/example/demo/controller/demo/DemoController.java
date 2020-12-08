@@ -14,7 +14,7 @@ public class DemoController {
 
     @GetMapping(path = "/getdemo")
     public String getDemo() {
-        return "OK";
+        return "Build Public Project";
     }
 
 }
