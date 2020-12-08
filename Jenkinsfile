@@ -9,7 +9,7 @@ pipeline {
                     bat  'mvn formatter:format'
                     bat  'mvn clean install -DskipTests'
                 }
-                echo 'Commit complie demo project'
+                echo 'Commit complie demo project ja'
             }
         }
 
@@ -19,7 +19,7 @@ pipeline {
                 withMaven(maven : 'maven_3.6.3') {
                     bat  'mvn test'
                 }
-                echo 'Commit test demo project'
+                echo 'Commit test demo project ja'
             }
         }
 
@@ -29,7 +29,7 @@ pipeline {
                 withMaven(maven : 'maven_3.6.3') {
                     bat  'java -jar -Dspring.profiles.active=local target/demo-0.0.1-SNAPSHOT.jar'
                 }
-                echo 'Commit deployed demo project'
+                echo 'Commit deployed demo project ja'
             }
         }
     }
